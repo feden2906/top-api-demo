@@ -40,15 +40,6 @@ export class ProductController {
 		return product;
 	}
 
-	// @Get('/')
-	// async get(@Param('id', IdValidationPipe) id: string) {
-	// 	const product = await this.productService.findById(id);
-	// 	if (!product) {
-	// 		throw new NotFoundException(PRODUCT_NOT_FOUND_ERROR);
-	// 	}
-	// 	return product;
-	// }
-
 	@UseGuards(JwtAuthGuard)
 	@Delete(':id')
 	async delete(@Param('id', IdValidationPipe) id: string) {
